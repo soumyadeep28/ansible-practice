@@ -1,0 +1,17 @@
+follow tis pacge to update the the builtin knowledge : https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html 
+go each page for the usage 
+
+
+------------
+to run ansible command  
+ansible-playbook -i inventory.ini inst_apache.yml
+-------------
+
+if you want to run some specific task 
+put a tag in the task  and run the task with 
+ansible-playbook -i inventory.ini  inst_apache.yml --tag="copyfile" 
+
+-------------
+if you want to from 3rd or 4th task 
+then run ansible command --stat-at-task ==""
+ansible-playbook -i inventory.ini inst_apache.yml --start-at-task="copyfile with owner and permissions"

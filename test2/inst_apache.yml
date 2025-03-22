@@ -1,0 +1,18 @@
+---
+#install pache in the remote host and aliong with that set permission and copy the file of index file
+- hosts: all
+  become: true
+  tasks:
+    - name: install apache httpd
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+        update_cache: yes
+    - name: copyfile with owner and permissions
+      tags: "copyfile"
+      ansible.builtin.copy: 
+        src: index.html
+        dest: /var/www/html
+        owner: root
+        group: root
+        mode: '0644'
