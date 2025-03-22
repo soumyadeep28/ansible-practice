@@ -1,0 +1,21 @@
+Ansible Lint is a command-line tool that analyzes Ansible playbooks, roles, and collections to identify potential issues and promote best practices, improving code quality and maintainability. It helps users adhere to community-recommended standards and patterns, preventing errors and making code easier to debug and upgrade
+
+
+Create roleS:
+- ansible-galaxy role init test  --> to initialize the test role in the picture 
+exapmle: ansible-galaxy role init httpd
+- now copy the inst_apache.yml tasks --> httpd/tasks/main.yml
+- copy the file index file in the /httpd/files folder and update the file path in the tasks files/index.html
+- create a ansible file and add roles list and pass httpd as param
+
+
+
+
+Ansible galaxy 
+
+to get the details : Ansible-galaxy roles -h 
+to get the all the community  packages 
+login to anasible galaxy 
+then do following steps to add the package in the setup 
+example ansible-galaxy role install bsmeding.docker
+all the roles are installed in this path  ~/.ansible/roles/
