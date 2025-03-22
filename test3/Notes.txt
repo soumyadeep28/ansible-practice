@@ -19,3 +19,8 @@ login to anasible galaxy
 then do following steps to add the package in the setup 
 example ansible-galaxy role install bsmeding.docker
 all the roles are installed in this path  ~/.ansible/roles/
+now create a ansible file and impor tthe roles 
+to publish the role setupput the role in the github public repo then add in the public ansible galaxy
+ansible-galaxy import <github id> <rolename> --token <token> 
+this token i generate int he galaxy portal
+
