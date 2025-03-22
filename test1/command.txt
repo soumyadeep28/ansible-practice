@@ -1,0 +1,8 @@
+to check the connectivity  
+do ssh -v user@ip 
+then do ssh-copy-id -i ~/.ssh/id_ed25519.pub user@ip
+ansible -i inventory.ini -m ping all
+
+-----------------------
+to run adhoc acommand 
+ansible -i inventory.ini -m shell -a "ls -lart" all
