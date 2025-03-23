@@ -1,0 +1,16 @@
+Create a password for vault
+openssl rand -base64 2048 > vault.pass
+ 
+
+Add your AWS credentials using the below vault command
+ansible-vault create group_vars/all/pass.yml --vault-password-file vault.pass
+
+also if you want to login remote but want to pass password from vault  
+# Example using Ansible Vault
+- hosts: your_hosts
+  vars:
+    ansible_ssh_user: your_username
+    ansible_ssh_pass: "{{ vault_password }}" # vault_password is encrypted.
+  tasks:
+    - name: Example task
+      command: whoami

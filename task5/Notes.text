@@ -1,0 +1,6 @@
+when: is passed when the if else condition is passed 
+register:  command_output >  to store the output of the result 
+ansible.builtin.debug:
+    var: command_output to print out the result 
+
+for the loop then pass loop and pass the variable as item.A ,item.b etc 

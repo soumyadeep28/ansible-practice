@@ -1,0 +1,22 @@
+--- 
+- hosts: all 
+  become: true
+  tasks:
+    - name: RUn ifconfig 
+      command: ls -lart
+      register: command_output
+      when:
+        ansible_facts['hostname'] == 'soumya-dev-machine'
+    - name: print output 
+      ansible.builtin.debug:
+        var: command_output
+
+    - name: RUn ifconfig 
+      shell: ls -lart
+      register: shell_output
+      when:
+        ansible_facts['hostname'] == 'soumya-dev-machine'
+    - name: print output 
+      ansible.builtin.debug:
+        var: shell_output
+
