@@ -1,0 +1,52 @@
+1. there are collection which works for the similer like the terraform modules  
+this is used for the ec2 deployment kubernaties netapp all 
+2. follow https://docs.ansible.com/ansible/latest/collections/vmware/vmware/index.html#plugins-in-vmware-vmware for vmware collections 
+3. follow https://docs.ansible.com/ansible/latest/collections/amazon/aws/index.html#plugins-in-amazon-aws for aws related 
+
+also for the vault usage use this https://github.com/iam-veeramalla/ansible-zero-to-hero/blob/main/Day-06/01-prereq.md
+
+Ansible does apply variable precedence, and you might have a use for it. Here is the order of precedence from least to greatest (the last listed variables override all other variables):
+
+command line values (for example, -u my_user, these are not variables)
+
+role defaults (as defined in Role directory structure) 1
+
+inventory file or script group vars 2
+
+inventory group_vars/all 3
+
+playbook group_vars/all 3
+
+inventory group_vars/* 3
+
+playbook group_vars/* 3
+
+inventory file or script host vars 2
+
+inventory host_vars/* 3
+
+playbook host_vars/* 3
+
+host facts / cached set_facts 4
+
+play vars
+
+play vars_prompt
+
+play vars_files
+
+role vars (as defined in Role directory structure)
+
+block vars (only for tasks in block)
+
+task vars (only for the task)
+
+include_vars
+
+set_facts / registered vars
+
+role (and include_role) params
+
+include params
+
+extra vars (for example, -e "user=my_user")(always win precedence)
